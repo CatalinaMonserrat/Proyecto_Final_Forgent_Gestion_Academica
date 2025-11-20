@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Programas Académicos</h2>
+
+    <a href="{% url 'gestion_academica:programa_create' %}" class="btn btn-primary mb-3">Nuevo Programa</a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Código</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+                <th>Fechas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in programas %}
+            <tr>
+                <td>{{ p.nombre }}</td>
+                <td>{{ p.codigo }}</td>
+                <td>{{ p.tipo }}</td>
+                <td>{{ p.estado }}</td>
+                <td>{{ p.fecha_inicio }} → {{ p.fecha_fin }}</td>
+                <td>
+                    <a href="{% url 'gestion_academica:programa_update' p.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'gestion_academica:programa_delete' p.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="6">No hay programas registrados.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

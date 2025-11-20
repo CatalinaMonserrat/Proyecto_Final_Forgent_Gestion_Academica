@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ form.instance.pk|yesno:"Editar Relator,Nuevo Relator" }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success" type="submit">Guardar</button>
+        <a href="{% url 'gestion_academica:relator_list' %}" class="btn btn-secondary">Volver</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Relatores</h2>
+
+    <a href="{% url 'gestion_academica:relator_create' %}" class="btn btn-primary mb-3">
+        Nuevo Relator
+    </a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Especialidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in relatores %}
+            <tr>
+                <td>{{ r.nombre_completo }}</td>
+                <td>{{ r.email }}</td>
+                <td>{{ r.especialidad }}</td>
+                <td>
+                    <a href="{% url 'gestion_academica:relator_update' r.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'gestion_academica:relator_delete' r.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No hay relatores registrados.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
