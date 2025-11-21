@@ -24,4 +24,13 @@ urlpatterns = [
     path("participantes/nuevo/", views.ParticipanteCreateView.as_view(), name="participante_create"),
     path("participantes/<int:pk>/editar/", views.ParticipanteUpdateView.as_view(), name="participante_update"),
     path("participantes/<int:pk>/eliminar/", views.ParticipanteDeleteView.as_view(), name="participante_delete"),
+
+        # Inscripciones
+    path("inscripciones/", views.InscripcionListView.as_view(), name="inscripcion_list"),
+    path("inscripciones/nueva/", views.InscripcionCreateView.as_view(), name="inscripcion_create"),
+    path("inscripciones/<int:pk>/editar/", views.InscripcionUpdateView.as_view(), name="inscripcion_update"),
+    path("inscripciones/<int:pk>/eliminar/", views.InscripcionDeleteView.as_view(), name="inscripcion_delete"),
+
+    # Reportes y estadísticas
+    path("reportes/estadisticas/", views.estadisticas, name="estadisticas"),
 ]

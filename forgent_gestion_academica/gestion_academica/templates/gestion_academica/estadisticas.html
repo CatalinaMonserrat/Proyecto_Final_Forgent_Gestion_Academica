@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Reportes y Estadísticas</h2>
+
+    <h4 class="mt-4">Top 5 cursos por cantidad de inscritos</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Programa</th>
+                <th>Total inscritos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nombre, total in top_cursos %}
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>{{ total }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="2">No hay datos de inscripciones aún.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h4 class="mt-4">Relatores con más horas asignadas</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Relator</th>
+                <th>Horas totales</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nombre, horas in top_relatores %}
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>{{ horas }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="2">No hay asignaciones de relatores aún.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

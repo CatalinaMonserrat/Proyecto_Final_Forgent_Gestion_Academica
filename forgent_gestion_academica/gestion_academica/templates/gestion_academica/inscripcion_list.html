@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Inscripciones</h2>
+
+    <a href="{% url 'gestion_academica:inscripcion_create' %}" class="btn btn-primary mb-3">
+        Nueva Inscripción
+    </a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Participante</th>
+                <th>Programa</th>
+                <th>Estado</th>
+                <th>Fecha inscripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in inscripciones %}
+            <tr>
+                <td>{{ i.participante }}</td>
+                <td>{{ i.programa }}</td>
+                <td>{{ i.estado }}</td>
+                <td>{{ i.fecha_inscripcion }}</td>
+                <td>
+                    <a href="{% url 'gestion_academica:inscripcion_update' i.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'gestion_academica:inscripcion_delete' i.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="5">No hay inscripciones registradas.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

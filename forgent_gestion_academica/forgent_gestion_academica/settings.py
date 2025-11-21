@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,6 +29,11 @@ INSTALLED_APPS = [
     'gestion_academica'
 ]
 
+# Redirecciones de autenticación
+LOGIN_URL = "login"              # nombre de la url de login
+LOGIN_REDIRECT_URL = "/"         # después de login → dashboard
+LOGOUT_REDIRECT_URL = "login"    # después de logout → login
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -43,7 +49,7 @@ ROOT_URLCONF = 'forgent_gestion_academica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,8 +69,12 @@ WSGI_APPLICATION = 'forgent_gestion_academica.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'forgent_academico_db',          # Nombre de la base de datos
+        'USER': 'root',        # Usuario de MySQL
+        'PASSWORD': 'root', # Contraseña
+        'HOST': 'localhost',         # Servidor de MySQL
+        'PORT': '3306',              # Puerto por defecto
     }
 }
 

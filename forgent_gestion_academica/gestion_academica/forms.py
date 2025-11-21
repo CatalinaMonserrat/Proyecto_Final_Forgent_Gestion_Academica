@@ -1,5 +1,5 @@
 from django import forms
-from .models import Programa, Relator, Participante
+from .models import Programa, Relator, Participante, Inscripcion
 
 
 class ProgramaForm(forms.ModelForm):
@@ -59,4 +59,13 @@ class ParticipanteForm(forms.ModelForm):
             "email",
             "servicio",
             "cargo",
+        ]
+
+class InscripcionForm(forms.ModelForm):
+    class Meta:
+        model = Inscripcion
+        fields = [
+            "participante",
+            "programa",
+            "estado",
         ]

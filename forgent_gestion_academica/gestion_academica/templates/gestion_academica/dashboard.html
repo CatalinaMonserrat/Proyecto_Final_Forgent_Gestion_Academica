@@ -10,6 +10,43 @@
         <a href="{% url 'gestion_academica:participante_list' %}" class="list-group-item">Participantes</a>
         <a href="{% url 'gestion_academica:estadisticas' %}" class="list-group-item">Reportes y Estadísticas</a>
     </div>
+
+    <div class="row my-4">
+    <div class="col-md-3">
+        <div class="card text-bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Programas totales</h5>
+                <p class="card-text fs-3">{{ total_programas }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Programas en ejecución</h5>
+                <p class="card-text fs-3">{{ programas_en_ejecucion }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Relatores</h5>
+                <p class="card-text fs-3">{{ total_relatoreS }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Participantes</h5>
+                <p class="card-text fs-3">{{ total_participantes }}</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
