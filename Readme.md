@@ -38,14 +38,14 @@ Esto suele hacerse en Excel, generando errores, duplicidad de información y dif
 
 Crear una aplicación web con:
 
-✔ Autenticación y control de acceso
-✔ CRUD completo (Programas, Relatores, Participantes, Inscripciones)
-✔ Relación M2M con horas asignadas
-✔ Reportes SQL optimizados
-✔ Dashboard de indicadores
-✔ Uso de ORM + SQL manual (según rúbrica)
-✔ Frontend profesional con Bootstrap
-✔ Base de datos MySQL para entorno real
+- Autenticación y control de acceso
+- CRUD completo (Programas, Relatores, Participantes, Inscripciones)
+- Relación M2M con horas asignadas
+- Reportes SQL optimizados
+- Dashboard de indicadores
+- Uso de ORM + SQL manual (según rúbrica)
+- Frontend profesional con Bootstrap
+- Base de datos MySQL para entorno real
 
 ## Arquitectura del Proyecto
 ```bash
@@ -194,24 +194,29 @@ ParticipantesTotal = Participante.objects.count()
 ## Autenticación y Control de Acceso
 <img src="capturas/login.png" width="600">
 
-✔ LoginView
-✔ LogoutView
-✔ login_required en todas las vistas
-✔ Redirección segura
-✔ Solo usuarios autenticados pueden acceder al panel
+- LoginView
+- LogoutView
+- login_required en todas las vistas
+- Redirección segura
+- Solo usuarios autenticados pueden acceder al panel
 
 ## Galería de Capturas
 
 📌 Dashboard
 <img src="capturas/inicio.png" width="700">
+
 📌 Programas
 <img src="capturas/programas.png" width="700">
+
 📌 Relatores
 <img src="capturas/relatores.png" width="700">
+
 📌 Participantes
 <img src="capturas/participantes.png" width="700">
+
 📌 Nuevo Programa
 <img src="capturas/nuevo_relator.png" width="700">
+
 📌 Estadísticas SQL
 <img src="capturas/reporte_estadisticas.png" width="700">
 
