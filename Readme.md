@@ -202,23 +202,23 @@ ParticipantesTotal = Participante.objects.count()
 
 ## Galería de Capturas
 
-📌 Dashboard
-<img src="capturas/inicio.png" width="700">
+### 📌 Dashboard
+![Dashboard](capturas/inicio.png)
 
-📌 Programas
-<img src="capturas/programas.png" width="700">
+### 📌 Programas
+![Programas](capturas/programas.png)
 
-📌 Relatores
-<img src="capturas/relatores.png" width="700">
+### 📌 Relatores
+![Relatores](capturas/relatores.png)
 
-📌 Participantes
-<img src="capturas/participantes.png" width="700">
+### 📌 Participantes
+![Participantes](capturas/participantes.png)
 
-📌 Nuevo Programa
-<img src="capturas/nuevo_relator.png" width="700">
+### 📌 Nuevo Participante
+![Nuevo Participante](capturas/nuevo_participante.png)
 
-📌 Estadísticas SQL
-<img src="capturas/reporte_estadisticas.png" width="700">
+### 📌 Estadísticas SQL
+![Reporte de estadísticas](capturas/reporte_estadisticas.png)
 
 ## Conclusiones
 
